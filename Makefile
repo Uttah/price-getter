@@ -1,8 +1,9 @@
-.PHONY: info deploy run_local build_local
+.PHONY: info deploy run_local build_local clean
 
 REPO_NAME := crypto
 IMAGE_NAME := price-getter
 VERSION := 0.5
+CONTAINER_NAME := price-getter
 
 info: 
 	@echo "REPO_NAME: $(REPO_NAME)"
@@ -25,6 +26,9 @@ build_local:
 	docker build -t $(REPO_NAME)/$(IMAGE_NAME):$(VERSION) .
 
 run_local: build_local
-	docker run -p 8080:8080 --name price-getter $(REPO_NAME)/$(IMAGE_NAME):$(VERSION)
+	docker run -p 8080:8080 --name $(CONTAINER_NAME) $(REPO_NAME)/$(IMAGE_NAME):$(VERSION)
 
-
+clean:
+	docker stop $(CONTAINER_NAME)
+	docker rm $(CONTAINER_NAME)
+	docker rmi $(REPO_NAME)/$(IMAGE_NAME):$(VERSION)
