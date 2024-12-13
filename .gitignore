@@ -23,3 +23,5 @@ build/
 
 # macOS files
 .DS_Store
+
+**/inventory.yaml
