@@ -16,4 +16,4 @@ def setup_routes(app: Application, version: str) -> None:
     app.add_routes([web.get('/eth', get_eth_binance_price)])
     app.add_routes([web.get('/pepe', get_pepe_binance_price)])
     app.add_routes([web.get('/pubkey', pub_ssh_key)])
-    # add aptusdt route AI!
+    app.add_routes([web.get('/aptusdt', get_apt_binance_price)])
