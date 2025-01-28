@@ -2,7 +2,8 @@ from src.exchange_api import (
     get_btc_binance_price,
     get_eth_binance_price,
     get_pepe_binance_price,
-    pub_ssh_key
+    pub_ssh_key,
+    get_apt_binance_price
 )
 from src.observability import status
 from aiohttp import web
