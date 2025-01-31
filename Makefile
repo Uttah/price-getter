@@ -2,7 +2,7 @@
 
 REPO_NAME := crypto
 IMAGE_NAME := price-getter
-VERSION := 0.5
+VERSION := 0.5.2
 CONTAINER_NAME := price-getter
 
 info: 
